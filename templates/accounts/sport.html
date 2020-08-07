@@ -1,0 +1,267 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../favicon.ico">
+<title>Europ Assistance</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/europfonts.css' %}" rel="stylesheet">
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<link href="{% static 'css/ie10-viewport-bug-workaround.css' %}" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="{% static 'js/ie-emulation-modes-warning.js' %}"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- Modal -->
+<div class="modal left fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header modal-headerPad">
+        <button type="button" class="close closeBtn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body modal-bodyPad">
+        <div class="Mweblinks">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Privileges</a></li>
+            <li><a href="#">Destination</a></li>
+            <li><a href="#">Book Now</a></li>
+            <li><a href="#">My Profile</a>
+            <li><a href="#">My Address</a></li>
+            <li><a href="#">My Bookings</a></li>
+            <li><a href="#">Members Benefits</a></li>
+            <li><a href="#">Change Password</a></li>
+            <li><a href="#">Log out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- modal-content -->
+  </div>
+  <!-- modal-dialog -->
+</div>
+<!-- modal -->
+<nav class="navbar navbar-inverse navbar-default navbar-fixed-top navbar-inverseBG navbar-defaultBg">
+  <div class="container">
+    <div class="navbar-header">
+      <div class="burgaricon hidden-sm hidden-md hidden-lg" data-toggle="modal" data-target="#myModal"> <i class="fa fa-bars" aria-hidden="true"></i></div>
+      <button type="button" class="navbar-toggle collapsed hidden-xs" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand navbar-brandlogo" href="#"><img src="{% static 'images/logo.png' %}" alt="europ-logo" class="img-responsive"></a> </div>
+    <div id="navbar" class="collapse navbar-collapse hidden-xs">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Privileges</a></li>
+        <li><a href="#">Destination </a></li>
+        <li><a href="#">Book Now </a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown"> <a href="#" class="dropdown-toggle loginWrap" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i></a>
+          <ul id="login-dp" class="dropdown-menu">
+            <li>
+            <li><a href="#">My Profile</a>
+            <li><a href="#">My Address</a></li>
+            <li><a href="#">My Bookings</a></li>
+            <li><a href="#">Members Benefits</a></li>
+            <li><a href="#">Change Password</a></li>
+            <li><a href="#">Log out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> </div>
+  </div>
+</nav>
+<div class="lifestyleWrap clearfix" >
+<div class="lifeheading">
+Sport Events
+</div>
+<div class="owl-lifestyle">
+<div class="large-12 columns clearfix">
+      
+          <div class="loop owl-carousel owl-theme">
+            <div class="item">
+              <img src="{% static 'images/05.jpg' %}" alt="img" class="img-responsive lifestyleImg">
+            </div>
+            <div class="item">
+            <img src="{% static 'images/06.jpg' %}" alt="img" class="img-responsive lifestyleImg">
+            </div>
+            <div class="item">
+              <img src="{% static 'images/07.jpg' %}" alt="img" class="img-responsive lifestyleImg">
+            </div>
+            <div class="item">
+             <img src="{% static 'images/08.jpg' %}" alt="img" class="img-responsive lifestyleImg">
+            </div>
+            </div>
+          </div>
+        </div>
+		
+</div>
+<div class="lifeWrapchk">
+<div class="container">
+		<div class="row">
+		
+		<div class="lifestylechkMn">
+		<div class="col-lg-12 ">
+		<div class="regi-title">
+		<h1>Please Select your Preferences</h1>
+		</div>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <form action="{% url 'sport' %}" method="POST">
+      {% csrf_token %}
+      {% for sport in sport %}
+		<label class="check"> <input type="checkbox" name="Sportevent[]" value="Cricket" {% if 'Cricket' in sport.Sportevent %} checked="checked" {% endif %}><span><div class="text-center padTB lifticonopt"><img src="{% static 'images/team-sports.png' %}"></div> Cricket</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Football" {% if 'Football' in sport.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/soccer.png' %}"></div> Football</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Tennis" {% if 'Tennis' in sport.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/racket.png' %}"></div>Tennis</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Grand Prix" {% if 'Grand Prix' in sport.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/grandprix.png' %}"></div>Grand Prix</span> </label>
+					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Moto-GP" {% if 'Moto-GP' in sport.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/motorcycle.png' %}"></div>Moto-GP</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Multi-sport" {% if 'Multi-sport' in sport.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/skateboard.png' %}"></div>Multi-sport</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Rugby" {% if 'Rugby' in sport.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/sportequipment.png' %}"></div>Rugby</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Derby" {% if 'Derby' in sport.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/derby.png' %}"></div>Derby</span> </label>     
+					      
+					</div>
+					</div>
+					<div class="btnbothWrap mfgb">
+					<a href="{% url 'cuisine' %}" class="btn skipBtn" type="button">Previous</a>
+                <a href="{% url 'travel' %}" class="btn skipBtn" type="button">Skip</a>
+				 {% comment %} <a href="entertainment_events.html" class="btn nextalfBtn" type="button">Next</a> {% endcomment %}
+         <input type="submit" class="btn nextalfBtn" value="Next" >
+              </div>
+              {% endfor %}
+		</div>
+		</div>
+		</div>
+
+
+<div class="footerSet">
+  <div class="footerCont">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <div class="ftr-title">
+            <h1> About Us </h1>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 hidden-xs">
+          <div class="ftr-title">
+            <h1> Information </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ftr-contWrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <div class="ftrAbt">
+            <p> Lorem ipsum is simply dummy text of the printing and typesetting. Lorem Ipsum has been the industry’s standard dummy. Lorem ipsum is simply dummy text of the printing and design. Lorem ipsum is simply dummy text of the printing and typesetting. Lorem Ipsum has been the industry’s standard dummy. Lorem ipsum is simply dummy text of the printing and design. </p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <div class="ftrlinks">
+            <ul>
+              <li><a href="#">Delivery Information</a> </li>
+              <li><a href="#">Privacy Policy</a> </li>
+              <li><a href="#">Terms & Condition</a> </li>
+              <li><a href="#">FAQ</a> </li>
+              <li><a href="#">Contact Us</a> </li>
+            </ul>
+          </div>
+          <div class="ftrlinks">
+            <ul>
+              <li><a href="#">Privileges</a> </li>
+              <li><a href="#">Destination</a> </li>
+              <li><a href="#">Book Now</a> </li>
+              <li><a href="#">Hotel</a> </li>
+              <li><a href="#">Events</a> </li>
+            </ul>
+          </div>
+          <div class="ftrlinks">
+            <ul>
+              <li><a href="#">Restaurant</a> </li>
+              <li><a href="#">Live event</a> </li>
+              <li><a href="#">Music dj</a> </li>
+              <li><a href="#">Spa and beauty</a> </li>
+              <li><a href="#">Adventure</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footerCopy">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a href="#">Terms and conditions</a> and <a href="#">Privacy policy</a> </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-right text-rightCentr"> © 2020 europassistanc. All Rights Reserved.</div>
+    </div>
+  </div>
+</div>
+<!-- /.container -->
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+<script>
+    $('.loop').owlCarousel({
+    center: true,
+    items:2,
+    loop:true,
+	autoplay:true,
+    margin:10,
+    responsive:{
+        600:{
+            items:3
+        }
+    }
+});
+ </script>
+<script>
+     $(function(){
+        $(".dropdown").hover(            
+          function() {
+            $('.dropdown-menu', this).stop( true, true ).fadeIn("fast");
+            $(this).toggleClass('open');
+            $('b', this).toggleClass("caret caret-up");                
+          },
+          function() {
+            $('.dropdown-menu', this).stop( true, true ).fadeOut("fast");
+            $(this).toggleClass('open');
+            $('b', this).toggleClass("caret caret-up");                
+          });
+      });
+</script>
+<script>
+$(window).scroll(function(){
+	$('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
+});
+</script>
+</body>
+</html>
