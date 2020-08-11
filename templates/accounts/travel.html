@@ -130,17 +130,17 @@ Travel
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <form action="{% url 'travel' %}" method="POST">
       {% csrf_token %}
-      {% for travel in travel %}
-		<label class="check"> <input type="checkbox" name="Travel[]" value="Nature & Outdoors" {% if 'Nature & Outdoors' in travel.Travel %} checked="checked" {% endif %}><span><div class="text-center padTB lifticonopt"><img src="{% static 'images/nature.png' %}"></div> Nature & Outdoors</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Travel[]" value="Weekend Getaways" {% if 'Weekend Getaways' in travel.Travel %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/getaways.png' %}"></div>Weekend Getaways</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Travel[]" value="Safari" {% if 'Safari' in travel.Travel %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/safari.png' %}"></div>Safari</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Travel[]" value="Historical & Heritage"  {% if 'Historical & Heritage' in travel.Travel %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/historical.png' %}"></div>Historical & Heritage</span> </label>
-					 <label class="check"> <input type="checkbox" name="Travel[]" value="Countryside" {% if 'Countryside' in travel.Travel %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/countryside.png' %}"></div>Countryside</span> </label>
-					 <label class="check"> <input type="checkbox" name="Travel[]" value="Family" {% if 'Family' in travel.Travel %} checked="checked" {% endif %}>  <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/family.png' %}"></div>Family</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Travel[]" value="Desert Safari" {% if 'Desert Safari' in travel.Travel %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/desert.png' %}"></div>Desert Safari</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Travel[]" value="Beaches" {% if 'Beaches' in travel.Travel %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/beach.png' %}"></div>Beaches</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Travel[]" value="Cityscape" {% if 'Cityscape' in travel.Travel %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/cityscape.png' %}"></div>Cityscape</span> </label>    
-					 <label class="check"> <input type="checkbox" name="Travel[]" value="Romantic Getaways" {% if 'Romantic Getaways' in travel.Travel %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/Romantic.png' %}"></div>Romantic Getaways</span> </label> 
+      {% comment %} {% for travel in travel %} {% endcomment %}
+		<label class="check"> <input type="checkbox" name="Travel[]" value="Nature & Outdoors" {% if 'Nature & Outdoors' in request.session.Travel %} checked="checked" {% endif %}><span><div class="text-center padTB lifticonopt"><img src="{% static 'images/nature.png' %}"></div> Nature & Outdoors</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Travel[]" value="Weekend Getaways" {% if 'Weekend Getaways' in request.session.Travel %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/getaways.png' %}"></div>Weekend Getaways</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Travel[]" value="Safari" {% if 'Safari' in request.session.Travel %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/safari.png' %}"></div>Safari</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Travel[]" value="Historical & Heritage"  {% if 'Historical & Heritage' in request.session.Travel %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/historical.png' %}"></div>Historical & Heritage</span> </label>
+					 <label class="check"> <input type="checkbox" name="Travel[]" value="Countryside" {% if 'Countryside' in request.session.Travel %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/countryside.png' %}"></div>Countryside</span> </label>
+					 <label class="check"> <input type="checkbox" name="Travel[]" value="Family" {% if 'Family' in request.session.Travel %} checked="checked" {% endif %}>  <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/family.png' %}"></div>Family</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Travel[]" value="Desert Safari" {% if 'Desert Safari' in request.session.Travel %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/desert.png' %}"></div>Desert Safari</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Travel[]" value="Beaches" {% if 'Beaches' in request.session.Travel %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/beach.png' %}"></div>Beaches</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Travel[]" value="Cityscape" {% if 'Cityscape' in request.session.Travel %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/cityscape.png' %}"></div>Cityscape</span> </label>    
+					 <label class="check"> <input type="checkbox" name="Travel[]" value="Romantic Getaways" {% if 'Romantic Getaways' in request.session.Travel %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/Romantic.png' %}"></div>Romantic Getaways</span> </label> 
 					</div>
 					</div>
 					<div class="btnbothWrap mfgb">
@@ -149,7 +149,7 @@ Travel
             <input type="submit" class="btn nextalfBtn" value="Next" >    
 				 {% comment %} <a href="hobbies.html" class="btn nextalfBtn" type="button">Next</a> {% endcomment %}
               </div>
-              {% endfor %}
+              {% comment %} {% endfor %} {% endcomment %}
 		</div>
 		</div>
 		</div>

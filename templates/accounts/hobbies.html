@@ -130,15 +130,15 @@ Hobbies
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <form action="{% url 'hobbies' %}" method="POST">
       {% csrf_token %}
-      {% for hob in hob %}
-		<label class="check"> <input type="checkbox" name="Hobbies[]" value="Adventure Sports" {% if 'Adventure Sports' in hob.Hobbies %} checked="checked" {% endif %} ><span><div class="text-center padTB lifticonopt"><img src="{% static 'images/adventure.png' %}"></div> Adventure Sports</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Hobbies[]" value="Fitness" {% if 'Fitness' in hob.Hobbies %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/fitness.png' %}"></div>Fitness</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Hobbies[]" value="Music & Dancing" {% if 'Music & Dancing' in hob.Hobbies %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/dancing.png' %}"></div>Music & Dancing</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Hobbies[]" value="Photography" {% if 'Photography' in hob.Hobbies %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/photography.png' %}"></div>Photography</span> </label>
+      {% comment %} {% for hob in hob %} {% endcomment %}
+		<label class="check"> <input type="checkbox" name="Hobbies[]" value="Adventure Sports" {% if 'Adventure Sports' in request.session.hobbies %} checked="checked" {% endif %} ><span><div class="text-center padTB lifticonopt"><img src="{% static 'images/adventure.png' %}"></div> Adventure Sports</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Hobbies[]" value="Fitness" {% if 'Fitness' in request.session.hobbies %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/fitness.png' %}"></div>Fitness</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Hobbies[]" value="Music & Dancing" {% if 'Music & Dancing' in request.session.hobbies %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/dancing.png' %}"></div>Music & Dancing</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Hobbies[]" value="Photography" {% if 'Photography' in request.session.hobbies %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/photography.png' %}"></div>Photography</span> </label>
 					<label class="check"> <input type="checkbox" name="Hobbies[]" value="Cycling" {% if 'Cycling' in hob.Hobbies %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/cycling.png' %}"></div>Cycling</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Hobbies[]" value="Arts & Crafts" {% if 'Arts & Crafts' in hob.Hobbies %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/crafts.png' %}"></div>Arts & Crafts</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Hobbies[]" value="Drawing & Painting" {% if 'Drawing & Painting' in hob.Hobbies %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/painting.png' %}"></div>Drawing & Painting</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Hobbies[]" value="Golf" {% if 'Golf' in hob.Hobbies %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/golf.png' %}"></div>Golf</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Hobbies[]" value="Arts & Crafts" {% if 'Arts & Crafts' in request.session.hobbies %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/crafts.png' %}"></div>Arts & Crafts</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Hobbies[]" value="Drawing & Painting" {% if 'Drawing & Painting' in request.session.hobbies %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/painting.png' %}"></div>Drawing & Painting</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Hobbies[]" value="Golf" {% if 'Golf' in request.session.hobbies %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/golf.png' %}"></div>Golf</span> </label> 
 					           
 					</div>
 					</div>
@@ -149,7 +149,7 @@ Hobbies
 
 				 {% comment %} <a href="selectcuisine.html" class="btn nextalfBtn" type="button">Next</a> {% endcomment %}
               </div>
-              {% endfor %}
+              {% comment %} {% endfor %} {% endcomment %}
 		</div>
 		</div>
 		</div>

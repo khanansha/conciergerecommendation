@@ -129,18 +129,18 @@ Entertainment & Events
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <form action="{% url 'event' %}" method="POST">
-    {% for event in event %}
+    {% comment %} {% for event in event %} {% endcomment %}
       {% csrf_token %}
-		<label class="check"> <input type="checkbox" name="Entertainment_events[]" value="Music Festivals & Concerts"{% if 'Music Festivals & Concerts' in event.Entertainment_events %} checked="checked" {% endif %}><span><div class="text-center padTB lifticonopt"><img src="{% static 'images/song.png' %}"></div> Music Festivals & Concerts</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="High Fashion"{% if 'High Fashion' in event.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/model.png' %}"></div> High Fashion</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="Movie Premiers & Film Festivals"{% if 'Movie Premiers & Film Festivals' in event.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/videocamera.png' %}"></div>Movie Premiers & Film Festivals</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="Theater & Live Shows"{% if 'Theater & Live Shows' in event.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/theater.png' %}"></div>Theater & Live Shows</span> </label>
-					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="Business Events"{% if 'Business Events' in event.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/business.png' %}"></div>Business Events</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="Shopping Festivals"{% if 'Shopping Festivals' in event.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/festival.png' %}"></div>Shopping Festivals</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="Food Festivals"{% if 'Food Festivals' in event.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/foodfestivals.png' %}"></div>Food Festivals</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="Movies, TV shows & Subscriptions"{% if 'Movies, TV shows & Subscriptions' in event.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/subscribe.png' %}"></div>Movies, TV shows & Subscriptions</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="Cultural Events"{% if 'Cultural Events' in event.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/cultural.png' %}"></div>Cultural Events</span> </label>
-					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="​Art & Literature"{% if 'Art & Literature' in event.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/art.png' %}"></div>​Art & Literature</span> </label>  
+		<label class="check"> <input type="checkbox" name="Entertainment_events[]" value="Music Festivals & Concerts"{% if 'Music Festivals & Concerts' in request.session.Entertainment_events %} checked="checked" {% endif %}><span><div class="text-center padTB lifticonopt"><img src="{% static 'images/song.png' %}"></div> Music Festivals & Concerts</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="High Fashion"{% if 'High Fashion' in request.session.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/model.png' %}"></div> High Fashion</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="Movie Premiers & Film Festivals"{% if 'Movie Premiers & Film Festivals' in request.session.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/videocamera.png' %}"></div>Movie Premiers & Film Festivals</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="Theater & Live Shows"{% if 'Theater & Live Shows' in request.session.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/theater.png' %}"></div>Theater & Live Shows</span> </label>
+					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="Business Events"{% if 'Business Events' in request.session.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/business.png' %}"></div>Business Events</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="Shopping Festivals"{% if 'Shopping Festivals' in request.session.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/festival.png' %}"></div>Shopping Festivals</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="Food Festivals"{% if 'Food Festivals' in request.session.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/foodfestivals.png' %}"></div>Food Festivals</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="Movies, TV shows & Subscriptions"{% if 'Movies, TV shows & Subscriptions' in request.session.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/subscribe.png' %}"></div>Movies, TV shows & Subscriptions</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="Cultural Events"{% if 'Cultural Events' in request.session.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/cultural.png' %}"></div>Cultural Events</span> </label>
+					 <label class="check"> <input type="checkbox" name="Entertainment_events[]" value="​Art & Literature"{% if 'Art & Literature' in request.session.Entertainment_events %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/art.png' %}"></div>​Art & Literature</span> </label>  
 					          
 					</div>
 					</div>
@@ -150,7 +150,7 @@ Entertainment & Events
 				 {% comment %} <a href="travel.html" class="btn nextalfBtn" type="button">Next</a> {% endcomment %}
           <input type="submit" class="btn nextalfBtn" value="Next" >
               </div>
-              {% endfor %}
+              {% comment %} {% endfor %} {% endcomment %}
 		</div>
 		</div>
 		</div>
@@ -230,7 +230,7 @@ Entertainment & Events
 <script src="{% static 'js/owl.carousel.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="js/ie10-viewport-bug-workaround.js"></script>
+<script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
 <script>
     $('.loop').owlCarousel({
     center: true,

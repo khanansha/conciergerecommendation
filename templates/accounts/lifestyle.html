@@ -130,19 +130,19 @@ LifeStyle
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <form action="{% url 'lifestyle' %}" method="POST">
       {% csrf_token %}
-      {% for life in life %}
-		<label class="check"> <input type="checkbox" name="Lifestyle[]" value="Fashion" {% if 'Fashion' in life.Lifestyle %} checked="checked" {% endif %}><span><div class="text-center padTB lifticonopt"><img src="{% static 'images/clothes.png' %}"></div> Fashion</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Nightlife" {% if 'Nightlife' in life.Lifestyle %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/moon.png' %}"></div> Nightlife</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Wellness & Spa" {% if 'Wellness & Spa' in life.Lifestyle %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/massage.png' %}"></div>Wellness & Spa</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Business & Corporate" {% if 'Business & Corporate' in life.Lifestyle %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/person.png' %}"></div>Business & Corporate</span> </label>
-					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Bespoke Experiences" {% if 'Bespoke Experiences' in life.Lifestyle %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/experience.png' %}"></div>Bespoke Experiences</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Gastronomy" {% if 'Gastronomy' in life.Lifestyle %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/gastronomy.png' %}"></div>Gastronomy</span> </label>	
-					<label class="check"> <input type="checkbox" name="Lifestyle[]" value="Car Rental" {% if 'Car Rental' in life.Lifestyle %} checked="checked" {% endif %}>  <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/pickup-car.png' %}"></div>Car Rental</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Lifestyle Services" {% if 'Lifestyle Services' in life.Lifestyle %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/lifestyle.png' %}"></div>Lifestyle Services</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Luxury Purchase" {% if 'Luxury Purchase' in life.Lifestyle %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/diamond.png' %}"></div>Luxury Purchase</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Charters" {% if 'Charters' in life.Lifestyle %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/delivery.png' %}"></div>Charters</span> </label>
-					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="​Airport Services" {% if '​Airport Services' in life.Lifestyle %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/full-body.png' %}"></div>​Airport Services</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Career Counseling for Kids" {% if 'Career Counseling for Kids' in life.Lifestyle %} checked="checked" {% endif %} > <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/career.png' %}"></div>Career Counseling for Kids</span> </label>
+      {% comment %} {% for life in life %} {% endcomment %}
+		<label class="check"> <input type="checkbox" name="Lifestyle[]" value="Fashion" {% if 'Fashion' in request.session.life_style %} checked="checked" {% endif %}><span><div class="text-center padTB lifticonopt"><img src="{% static 'images/clothes.png' %}"></div> Fashion</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Nightlife" {% if 'Nightlife' in request.session.life_style %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/moon.png' %}"></div> Nightlife</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Wellness & Spa" {% if 'Wellness & Spa' in request.session.life_style %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/massage.png' %}"></div>Wellness & Spa</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Business & Corporate" {% if 'Business & Corporate' in request.session.life_style %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/person.png' %}"></div>Business & Corporate</span> </label>
+					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Bespoke Experiences" {% if 'Bespoke Experiences' in request.session.life_style %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/experience.png' %}"></div>Bespoke Experiences</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Gastronomy" {% if 'Gastronomy' in request.session.life_style %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/gastronomy.png' %}"></div>Gastronomy</span> </label>	
+					<label class="check"> <input type="checkbox" name="Lifestyle[]" value="Car Rental" {% if 'Car Rental' in request.session.life_style %} checked="checked" {% endif %}>  <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/pickup-car.png' %}"></div>Car Rental</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Lifestyle Services" {% if 'Lifestyle Services' in request.session.life_style %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/lifestyle.png' %}"></div>Lifestyle Services</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Luxury Purchase" {% if 'Luxury Purchase' in request.session.life_style %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/diamond.png' %}"></div>Luxury Purchase</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Charters" {% if 'Charters' in request.session.life_style %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/delivery.png' %}"></div>Charters</span> </label>
+					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="​Airport Services" {% if '​Airport Services' in request.session.life_style %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/full-body.png' %}"></div>​Airport Services</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Career Counseling for Kids" {% if 'Career Counseling for Kids' in request.session.life_style %} checked="checked" {% endif %} > <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/career.png' %}"></div>Career Counseling for Kids</span> </label>
 					 	           
 					</div>
 					</div>
@@ -153,7 +153,7 @@ LifeStyle
 
 				 {% comment %} <a href="sportevents.html" class="btn nextalfBtn" type="button">Next</a> {% endcomment %}
               </div>
-              {% endfor %}
+              {% comment %} {% endfor %} {% endcomment %}
               </form>
 					</div>
 					

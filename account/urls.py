@@ -11,6 +11,7 @@ urlpatterns = [
     path('travel/', views.travel, name='travel'),
     path('event/', views.event, name='event'),
     path('index/', views.index, name='index'),
+    path('test/', views.test, name='test'),
 
 
 ]

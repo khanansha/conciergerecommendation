@@ -111,8 +111,12 @@ def lifestyle(request):
         Lifestyle = request.POST.getlist('Lifestyle[]')
         user_id = request.user.id
         l = ','.join(Lifestyle)
-        user = Preference.objects.filter(
-            user_id=request.user.id).update(Lifestyle=l)
+        request.session['life_style'] = l
+        life_style = request.session.get('life_style')
+        print(life_style)
+
+        # user = Preference.objects.filter(
+        #     user_id=request.user.id).update(Lifestyle=l)
         return redirect('hobbies')
     else:
         life = Preference.objects.filter(user_id=request.user.id)
@@ -125,8 +129,11 @@ def hobbies(request):
         Hobbies = request.POST.getlist('Hobbies[]')
         user_id = request.user.id
         h = ','.join(Hobbies)
-        user = Preference.objects.filter(
-            user_id=request.user.id).update(Hobbies=h)
+        request.session['hobbies'] = h
+        # print(life_style)
+
+        # user = Preference.objects.filter(
+        #     user_id=request.user.id).update(Hobbies=h)
         return redirect('cuisine')
     else:
         hob = Preference.objects.filter(user_id=request.user.id)
@@ -139,8 +146,10 @@ def cuisine(request):
         Cuisine = request.POST.getlist('Cuisine[]')
         user_id = request.user.id
         c = ','.join(Cuisine)
-        user = Preference.objects.filter(
-            user_id=request.user.id).update(Cuisine=c)
+        request.session['Cuisine'] = c
+
+        # user = Preference.objects.filter(
+        #     user_id=request.user.id).update(Cuisine=c)
         return redirect('sport')
     else:
         cuisine = Preference.objects.filter(user_id=request.user.id)
@@ -153,8 +162,10 @@ def sport(request):
         Sportevent = request.POST.getlist('Sportevent[]')
         user_id = request.user.id
         s = ','.join(Sportevent)
-        user = Preference.objects.filter(
-            user_id=request.user.id).update(Sportevent=s)
+        request.session['Sportevent'] = s
+
+        # user = Preference.objects.filter(
+        #     user_id=request.user.id).update(Sportevent=s)
         return redirect('travel')
     else:
         sport = Preference.objects.filter(user_id=request.user.id)
@@ -167,8 +178,9 @@ def travel(request):
         Travel = request.POST.getlist('Travel[]')
         user_id = request.user.id
         t = ','.join(Travel)
-        user = Preference.objects.filter(
-            user_id=request.user.id).update(Travel=t)
+        request.session['Travel'] = t
+        # user = Preference.objects.filter(
+        #     user_id=request.user.id).update(Travel=t)
         return redirect('event')
     else:
         travel = Preference.objects.filter(user_id=request.user.id)
@@ -181,8 +193,16 @@ def event(request):
         Entertainment_events = request.POST.getlist('Entertainment_events[]')
         user_id = request.user.id
         e = ','.join(Entertainment_events)
-        user = Preference.objects.filter(
-            user_id=request.user.id).update(Entertainment_events=e)
+        request.session['Entertainment_events'] = e
+        life_style = request.session.get('life_style')
+        hobbies = request.session.get('hobbies')
+        Cuisine = request.session.get('Cuisine')
+        Sportevent = request.session.get('Sportevent')
+        Travel = request.session.get('Travel')
+        Entertainment_events = request.session.get('Entertainment_events')
+
+        user = Preference.objects.filter(user_id=request.user.id).update(
+            Lifestyle=life_style, Hobbies=hobbies, Cuisine=Cuisine, Travel=Travel, Sportevent=Sportevent, Entertainment_events=Entertainment_events)
         return redirect('index')
     else:
         event = Preference.objects.filter(user_id=request.user.id)
@@ -191,3 +211,9 @@ def event(request):
 
 def index(request):
     return render(request, 'accounts/index.html')
+
+
+def test(request):
+    request.session['fav_color'] = 'blue'
+    fav_color = request.session.get('fav_color')
+    return render(request, 'accounts/test.html')

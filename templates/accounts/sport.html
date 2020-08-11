@@ -130,15 +130,15 @@ Sport Events
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <form action="{% url 'sport' %}" method="POST">
       {% csrf_token %}
-      {% for sport in sport %}
-		<label class="check"> <input type="checkbox" name="Sportevent[]" value="Cricket" {% if 'Cricket' in sport.Sportevent %} checked="checked" {% endif %}><span><div class="text-center padTB lifticonopt"><img src="{% static 'images/team-sports.png' %}"></div> Cricket</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Football" {% if 'Football' in sport.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/soccer.png' %}"></div> Football</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Tennis" {% if 'Tennis' in sport.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/racket.png' %}"></div>Tennis</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Grand Prix" {% if 'Grand Prix' in sport.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/grandprix.png' %}"></div>Grand Prix</span> </label>
-					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Moto-GP" {% if 'Moto-GP' in sport.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/motorcycle.png' %}"></div>Moto-GP</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Multi-sport" {% if 'Multi-sport' in sport.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/skateboard.png' %}"></div>Multi-sport</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Rugby" {% if 'Rugby' in sport.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/sportequipment.png' %}"></div>Rugby</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Derby" {% if 'Derby' in sport.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/derby.png' %}"></div>Derby</span> </label>     
+      {% comment %} {% for sport in sport %} {% endcomment %}
+		<label class="check"> <input type="checkbox" name="Sportevent[]" value="Cricket" {% if 'Cricket' in request.session.Sportevent %} checked="checked" {% endif %}><span><div class="text-center padTB lifticonopt"><img src="{% static 'images/team-sports.png' %}"></div> Cricket</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Football" {% if 'Football' in request.session.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/soccer.png' %}"></div> Football</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Tennis" {% if 'Tennis' in request.session.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/racket.png' %}"></div>Tennis</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Grand Prix" {% if 'Grand Prix' in request.session.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/grandprix.png' %}"></div>Grand Prix</span> </label>
+					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Moto-GP" {% if 'Moto-GP' in request.session.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/motorcycle.png' %}"></div>Moto-GP</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Multi-sport" {% if 'Multi-sport' in request.session.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/skateboard.png' %}"></div>Multi-sport</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Rugby" {% if 'Rugby' in request.session.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/sportequipment.png' %}"></div>Rugby</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Sportevent[]" value="Derby" {% if 'Derby' in request.session.Sportevent %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/derby.png' %}"></div>Derby</span> </label>     
 					      
 					</div>
 					</div>
@@ -148,7 +148,7 @@ Sport Events
 				 {% comment %} <a href="entertainment_events.html" class="btn nextalfBtn" type="button">Next</a> {% endcomment %}
          <input type="submit" class="btn nextalfBtn" value="Next" >
               </div>
-              {% endfor %}
+              {% comment %} {% endfor %} {% endcomment %}
 		</div>
 		</div>
 		</div>

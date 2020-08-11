@@ -130,22 +130,22 @@ Select Cuisine
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <form action="{% url 'cuisine' %}" method="POST">
       {% csrf_token %}
-      {% for cuisine in cuisine %}
-		<label class="check"> <input type="checkbox" name="Cuisine[]" value="American" {% if 'American' in cuisine.Cuisine %} checked="checked" {% endif %}><span class="pad-t">American</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Chinese" {% if 'Chinese' in cuisine.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Chinese</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="European" {% if 'European' in cuisine.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">European</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="French" {% if 'French' in cuisine.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">French</span> </label>
-					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Greek" {% if 'Greek' in cuisine.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Greek</span> </label>
-					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Indian" {% if 'Indian' in cuisine.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Indian</span> </label>
-					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Italian" {% if 'Italian' in cuisine.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Italian</span> </label>
-					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Japanese" {% if 'Japanese' in cuisine.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Japanese</span> </label>
-					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Lebanese" {% if 'Lebanese' in cuisine.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Lebanese</span> </label>
-					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Mediterranean" {% if 'Mediterranean' in cuisine.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Mediterranean</span> </label>
-					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Mexican" {% if 'Mexican' in cuisine.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Mexican</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Middle Eastern" {% if 'Middle Eastern' in cuisine.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Middle Eastern</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Spanish" {% if 'Spanish' in cuisine.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Spanish</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Thai" {% if 'Thai' in cuisine.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Thai</span> </label> 
-					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Turkish" {% if 'Turkish' in cuisine.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Turkish</span> </label>  
+      {% comment %} {% for cuisine in cuisine %} {% endcomment %}
+		<label class="check"> <input type="checkbox" name="Cuisine[]" value="American" {% if 'American' in request.session.Cuisine %} checked="checked" {% endif %}><span class="pad-t">American</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Chinese" {% if 'Chinese' in request.session.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Chinese</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="European" {% if 'European' in request.session.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">European</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="French" {% if 'French' in request.session.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">French</span> </label>
+					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Greek" {% if 'Greek' in request.session.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Greek</span> </label>
+					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Indian" {% if 'Indian' in request.session.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Indian</span> </label>
+					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Italian" {% if 'Italian' in request.session.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Italian</span> </label>
+					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Japanese" {% if 'Japanese' in request.session.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Japanese</span> </label>
+					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Lebanese" {% if 'Lebanese' in request.session.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Lebanese</span> </label>
+					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Mediterranean" {% if 'Mediterranean' in request.session.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Mediterranean</span> </label>
+					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Mexican" {% if 'Mexican' in request.session.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Mexican</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Middle Eastern" {% if 'Middle Eastern' in request.session.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Middle Eastern</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Spanish" {% if 'Spanish' in request.session.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Spanish</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Thai" {% if 'Thai' in request.session.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Thai</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Cuisine[]" value="Turkish" {% if 'Turkish' in request.session.Cuisine %} checked="checked" {% endif %}> <span class="pad-t">Turkish</span> </label>  
 					</div>
 				
 					</div>
@@ -155,7 +155,7 @@ Select Cuisine
           <input type="submit" class="btn nextalfBtn" value="Next" >
 				 {% comment %} <a href="index.html" class="btn nextalfBtn" type="button">Next</a> {% endcomment %}
               </div>
-              {% endfor %}
+              {% comment %} {% endfor %} {% endcomment %}
 		</div>
 		</div>
 		</div>
