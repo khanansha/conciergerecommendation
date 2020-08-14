@@ -78,7 +78,7 @@
         <li class="dropdown"> <a href="#" class="dropdown-toggle loginWrap" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i></a>
           <ul id="login-dp" class="dropdown-menu">
             <li>
-            <li><a href="#">My Profile</a>
+            <li><a href="{% url 'profile' %}">My Profile</a>
             <li><a href="#">My Address</a></li>
             <li><a href="#">My Bookings</a></li>
             <li><a href="#">Members Benefits</a></li>
@@ -141,7 +141,7 @@ LifeStyle
 					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Lifestyle Services" {% if 'Lifestyle Services' in request.session.life_style %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/lifestyle.png' %}"></div>Lifestyle Services</span> </label> 
 					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Luxury Purchase" {% if 'Luxury Purchase' in request.session.life_style %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/diamond.png' %}"></div>Luxury Purchase</span> </label> 
 					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Charters" {% if 'Charters' in request.session.life_style %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/delivery.png' %}"></div>Charters</span> </label>
-					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="​Airport Services" {% if '​Airport Services' in request.session.life_style %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/full-body.png' %}"></div>​Airport Services</span> </label> 
+					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Airport Services" {% if 'Airport Services' in request.session.life_style %} checked="checked" {% endif %}> <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/full-body.png' %}"></div>Airport Services</span> </label> 
 					 <label class="check"> <input type="checkbox" name="Lifestyle[]" value="Career Counseling for Kids" {% if 'Career Counseling for Kids' in request.session.life_style %} checked="checked" {% endif %} > <span><div class="text-center padTB lifticonopt"><img src="{% static 'images/career.png' %}"></div>Career Counseling for Kids</span> </label>
 					 	           
 					</div>

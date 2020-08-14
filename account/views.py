@@ -71,7 +71,7 @@ def login(request):
 
             auth.login(request, user)
 
-            messages.success(request, 'You are now logged in')
+            # messages.success(request, 'You are now logged in')
 
             return redirect('profile')
 
@@ -112,8 +112,10 @@ def lifestyle(request):
         user_id = request.user.id
         l = ','.join(Lifestyle)
         request.session['life_style'] = l
+
         life_style = request.session.get('life_style')
         print(life_style)
+        print(type(life_style))
 
         # user = Preference.objects.filter(
         #     user_id=request.user.id).update(Lifestyle=l)
@@ -189,7 +191,6 @@ def travel(request):
 
 def event(request):
     if request.method == 'POST':
-
         Entertainment_events = request.POST.getlist('Entertainment_events[]')
         user_id = request.user.id
         e = ','.join(Entertainment_events)

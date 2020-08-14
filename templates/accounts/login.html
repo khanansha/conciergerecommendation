@@ -43,6 +43,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> </div>
   </div>
 </nav>
+{% include 'partials/_alerts.html' %}
+
 <div class="container">
 <div class="row">
 <div class="clearfix regiMain">
@@ -92,6 +94,15 @@
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+ <script>
+  function changeMe(sel){
+   sel.style.color = "#000";              
+}
+setTimeout(function() {
 
+    $('#alert-message').fadeOut('slow');
+  
+  }, 3000);
+      </script>
 </body>
 </html>

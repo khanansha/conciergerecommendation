@@ -16,10 +16,9 @@ class Profile(models.Model):
 
 class Preference(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    Cuisine = models.CharField(max_length=100, null=True, blank=True)
-    Lifestyle = models.CharField(max_length=100, null=True, blank=True)
-    Sportevent = models.CharField(max_length=100, null=True, blank=True)
-    Travel = models.CharField(max_length=100, null=True, blank=True)
-    Entertainment_events = models.CharField(
-        max_length=100, null=True, blank=True)
-    Hobbies = models.CharField(max_length=100, null=True, blank=True)
+    Cuisine = models.TextField(null=True, blank=True)
+    Lifestyle = models.TextField(null=True, blank=True)
+    Sportevent = models.TextField(null=True, blank=True)
+    Travel = models.TextField(null=True, blank=True)
+    Entertainment_events = models.TextField(null=True, blank=True)
+    Hobbies = models.TextField(null=True, blank=True)

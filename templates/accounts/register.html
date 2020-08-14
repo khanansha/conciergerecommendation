@@ -43,6 +43,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> </div>
   </div>
 </nav>
+{% include 'partials/_alerts.html' %}
+
 <div class="container">
 <div class="row">
 <div class="clearfix regiMain">
@@ -51,8 +53,10 @@
 <img src="{% static 'images/regi_img.png' %}" alt="img" class="img-responsive">
 </div>
 </div>
+
 <div class="col-lg-1"></div>
 <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
+
 <div class="regiBg">
 <form action="{% url 'register' %}" method="POST">
     {% csrf_token %}
@@ -106,6 +110,16 @@
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+ <script>
+            function changeMe(sel){
+   sel.style.color = "#000";  
+   style.left = "100px";            
+}
+setTimeout(function() {
 
+    $('#alert-message').fadeOut('slow');
+  
+  }, 3000);
+      </script>
 </body>
 </html>
