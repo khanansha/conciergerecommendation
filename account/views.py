@@ -1,12 +1,16 @@
-from django.shortcuts import render
 
-# Create your views here.
+import sys
+import random
+from django.http import JsonResponse
+import json
+import requests
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib import messages, auth
 from.models import Profile, Preference
+
 # Create your views here.
 
 
@@ -214,7 +218,61 @@ def index(request):
     return render(request, 'accounts/index.html')
 
 
-def test(request):
-    request.session['fav_color'] = 'blue'
-    fav_color = request.session.get('fav_color')
-    return render(request, 'accounts/test.html')
+def recomd(request):
+    # select cuisine  from pref  where user_id in []
+    url = "http://3.6.245.232:5000/api/v1.0/similarcustomer"
+
+    user_id = request.user.id
+    print(user_id)
+    payload = {'customer_id': user_id, 'top': 5}
+    print(payload)
+    headers = {
+        'Content-Type': 'application/json'
+    }
+    similar = requests.post(url, headers=headers, data=json.dumps(payload))
+    x = similar.json()
+    # print("type:--", type(x))
+    res = x['results']['similar_customer']
+    print("type:--", type(res))
+    print(res)
+    sim_user_id = ",".join(list(map(str, res)))
+    print("sim_user_id:--", sim_user_id)
+
+    # q = Preference.objects.filter(
+    #     user_id__in=[3, 4, 5]).values_list('Cuisine')
+    query = "SELECT id ,Cuisine FROM account_preference WHERE user_id IN ({})".format(
+        sim_user_id)
+    print(query)
+    user_preference = Preference.objects.raw(query)
+
+    user_preference_list = []
+    for p in user_preference:
+        pp = p.Cuisine.split(",")
+        for ppp in pp:
+            user_preference_list.append(ppp)
+            # print(ppp)
+    ucuisine = list(set(user_preference_list))
+    print(ucuisine)
+
+    print("user_preference_list {}".format(user_preference_list))
+    print("unique preference {}".format(
+        list(set(user_preference_list))))
+
+    c = " ".join(str(ucuisine).split(','))
+    print(c)
+    for c in c:
+        cuisine_url = "http://3.6.245.232:5000/api/v1.0/dining"
+
+        payload = {'preference': c}
+
+        headers = {
+            'Content-Type': 'application/json'
+        }
+        cuisin = requests.post(
+            cuisine_url, headers=headers, data=json.dumps(payload))
+    # return JsonResponse(list(cuisin.values()), safe=False)
+        cuisin = cuisin.json()
+        recm = cuisin['results']['recommendation']
+        print(recm)
+
+        return HttpResponse(recm)
