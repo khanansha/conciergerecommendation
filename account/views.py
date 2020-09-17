@@ -1,4 +1,6 @@
 
+import operator
+import secrets
 import sys
 import random
 from django.http import JsonResponse
@@ -91,22 +93,30 @@ def login(request):
 
 
 def profile(request):
-    if request.method == 'POST':
+    pref = Preference.objects.filter(user_id=request.user.id)
+    u = pref[0].Cuisine
+    print(u)
+    if u:
+        return render(request, 'accounts/index.html')
 
-        # Get form values
-        mobile = request.POST['mobile']
-        DOB = request.POST['DOB']
-        Location = request.POST['Location']
-        Budget = request.POST['Budget']
-        user_id = request.user.id
-        print(user_id)
-        u = Profile.objects.filter(user_id=request.user.id).update(
-            DOB=DOB, mobile=mobile, Location=Location, Budget=Budget)
-
-        return redirect('lifestyle')
     else:
-        prof = Profile.objects.filter(user_id=request.user.id)
-        return render(request, 'accounts/newprofile.html', {'prof': prof})
+
+        if request.method == 'POST':
+
+            # Get form values
+            mobile = request.POST['mobile']
+            DOB = request.POST['DOB']
+            Location = request.POST['Location']
+            Budget = request.POST['Budget']
+            user_id = request.user.id
+            print(user_id)
+            u = Profile.objects.filter(user_id=request.user.id).update(
+                DOB=DOB, mobile=mobile, Location=Location, Budget=Budget)
+
+            return redirect('lifestyle')
+        else:
+            prof = Profile.objects.filter(user_id=request.user.id)
+            return render(request, 'accounts/newprofile.html', {'prof': prof})
 
 
 def lifestyle(request):
@@ -224,12 +234,13 @@ def recomd(request):
 
     user_id = request.user.id
     print(user_id)
-    payload = {'customer_id': user_id, 'top': 5}
+    payload = {'customer_id': user_id, 'top': 2}
     print(payload)
     headers = {
         'Content-Type': 'application/json'
     }
     similar = requests.post(url, headers=headers, data=json.dumps(payload))
+    #x = json.load(similar)
     x = similar.json()
     # print("type:--", type(x))
     res = x['results']['similar_customer']
@@ -260,9 +271,12 @@ def recomd(request):
 
     c = " ".join(str(ucuisine).split(','))
     print(c)
-    for c in c:
+    # print(random.sample(list(c), 5))
+    # print(random.sample(c, 6))
+    allcuisine_list = []
+    for c in ucuisine:
         cuisine_url = "http://3.6.245.232:5000/api/v1.0/dining"
-
+        print(c)
         payload = {'preference': c}
 
         headers = {
@@ -273,6 +287,26 @@ def recomd(request):
     # return JsonResponse(list(cuisin.values()), safe=False)
         cuisin = cuisin.json()
         recm = cuisin['results']['recommendation']
-        print(recm)
+        # allcuisine_list.append(recm)
+        for all_cuisine in recm:
+            allcuisine_list.append(all_cuisine)
 
-        return HttpResponse(recm)
+    # z = allcuisine_list.sort(key=lambda x: x.star.lower())
+    # print(z)
+
+    # print(allcuisine_list)
+    # print(recm)
+    # print(recm)
+    # return HttpResponse(allcuisine_list)
+    context = {
+        'allcuisine_list': allcuisine_list,
+    }
+    return render(request, 'accounts/dining.html', context)
+
+
+def dining(request):
+    return render(request, 'accounts/dining.html')
+
+
+def dining_reservation(request):
+    return render(request, 'accounts/dining_reservation.html')
